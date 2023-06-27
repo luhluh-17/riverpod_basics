@@ -13,6 +13,20 @@ class StateProviderView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final value = ref.watch(valueStateProvider);
 
+    // Listen to the state changes
+    ref.listen<int>(
+      valueStateProvider,
+      (previous, current) {
+        if (current == 10) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Value changed from $previous to $current'),
+            ),
+          );
+        }
+      },
+    );
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('State Provider'),
