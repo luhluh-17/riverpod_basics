@@ -28,7 +28,6 @@ linter:
     prefer_single_quotes: true
     prefer_relative_imports: true
     sort_child_properties_last: true
-    sort_pub_dependencies: true
     use_string_buffers: true
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
