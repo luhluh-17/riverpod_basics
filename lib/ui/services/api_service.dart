@@ -10,7 +10,7 @@ final dio = Dio();
 final apiServiceProvider = Provider((ref) => ApiService());
 
 class ApiService {
-  Future<Suggestion?> fetchSuggestion() async {
+  Future<Suggestion?> fetchSuggestion(id) async {
     try {
       final response = await dio.get('https://www.boredapi.com/api/activity');
       return Suggestion.fromJson(response.data);
